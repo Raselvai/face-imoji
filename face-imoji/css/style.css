@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+	box-sizing: border-box;
+}
+
+button:focus, input:focus, textarea:focus {
+	outline: 0;
+}
+
+body {
+   background: linear-gradient(to right, #41295a, #2f0743);
+}
+
+.emoji_wrapper {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.emoji_wrapper #container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	height: 100px;
+}
+
+.emoji_wrapper #container .face_button {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background: #fdda5f;
+	box-shadow: inset 2px -4px 18px #fd9744;
+	cursor: pointer;
+	border: transparent;
+}
+
+.emoji_wrapper #container .face_container {
+	position: relative;
+	display: block;
+	width: 40px;
+	height: 20px;
+	margin: auto;
+}
+
+.emoji_wrapper #container .face_container .eye {
+	position: absolute;
+	height: 7px;
+	width: 7px;
+	background: #212927;
+	border-radius: 50%;
+	animation:  eyeAnimate 3200ms linear infinite;
+}
+
+.emoji_wrapper #container .face_container .eye.left {
+    left: 0 !important;
+}
+
+.emoji_wrapper #container .face_container .right {
+    right: 0 !important;
+    left: auto !important;
+}
+
+.emoji_wrapper #container .face_container .mouth {
+    position: absolute;
+    top: 20px;
+    left: 34% !important;
+    width: 16px !important;
+    height: 3px !important;
+    background: #212927;
+    border-radius: 0 !important;
+}
+
+.emoji_wrapper #container .face_container .eye,
+.emoji_wrapper #container .face_container .mouth {
+	left: 50%;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+}
+
+.emoji_wrapper #container .face_button:hover .mouth, .emoji_wrapper #container .face_button.active .mouth {
+    left: 44% !important;
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 16px 16px 4px 4px !important;
+}
+
+.emoji_wrapper #container .face_button:hover .eye,
+.emoji_wrapper #container .face_button.active .eye {
+	height: 6px;
+	width: 6px;
+	box-shadow: 0 0 0 4px #ffffff;
+}
+
+@keyframes eyeAnimate {
+	0%, 30%, 36%, 100% {
+		transform: scale(1);
+	}
+	32%, 34% {
+		transform: scale(1, 0);
+	}
+}
